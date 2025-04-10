@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+</style>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWF Viewer</title>
+    <script src="ruffle-nightly-2024_11_19-web-selfhosted/ruffle.js"></script>
+</head>
+
+<body bgcolor="0">
+    <div id="container"></div>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("DOMContentLoaded", () => {
+            let ruffle = window.RufflePlayer.newest();
+            let player = ruffle.createPlayer();
+            let container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("strike-force-heroes.swf"); // Replace with the actual path to your SWF file
+        });
+    </script>
+</body>
+
+</html>
